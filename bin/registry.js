@@ -4,9 +4,13 @@
 
 
 var couchapp = require('couchapp');
-var docs = require('./../couchapp/ddocs');
+var docs = require('../lib/couchdb/ddocs');
 var nano = require('nano');
 var Q = require('q');
+
+var Package = require('../lib/models/package');
+var User = require('../lib/models/user');
+var Packages = require('../lib/models/package');
 
 
 //
@@ -173,5 +177,9 @@ Registry.prototype = {
   });
 
 }());
+
+Registry.User = User;
+Registry.Package = Package;
+Registry.Packages = Packages;
 
 module.exports = Registry;
